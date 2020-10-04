@@ -1,0 +1,18 @@
+<div>
+    <mat-toolbar color="primary">
+      <span>Veiculos</span>
+      <button mat-button [matMenuTriggerFor]="menu">Veiculo</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="veiculo/cadastro">Cadastro</button>
+        <button mat-menu-item routerLink="veiculo/pesquisa">Pesquisa</button>
+      </mat-menu>
+      <button mat-button [matMenuTriggerFor]="menuCategoria">Categoria</button>
+      <mat-menu #menuCategoria="matMenu">
+        <button mat-menu-item >Cadastro</button>
+        <button mat-menu-item>Pesquisa</button>
+      </mat-menu>
+    </mat-toolbar>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+  </div>

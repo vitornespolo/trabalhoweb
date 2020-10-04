@@ -17,6 +17,8 @@ import { MatTableModule } from '@angular/material/table';
 import { VeiculoCadastroComponent } from './pages/veiculo/veiculo-cadastro/veiculo-cadastro.component';
 import { VeiculoPesquisaComponent } from './pages/veiculo/veiculo-pesquisa/veiculo-pesquisa.component';
 import { UsuarioCadastroComponent } from './pages/usuario/usuario-cadastro/usuario-cadastro.component';
+import { AcessoriosCadastroComponent } from './pages/acessorios/acessorios-cadastro/acessorios-cadastro.component';
+import { AcessoriosPesquisaComponent } from './pages/acessorios/acessorios-pesquisa/acessorios-pesquisa.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { UsuarioCadastroComponent } from './pages/usuario/usuario-cadastro/usuar
     VeiculoCadastroComponent,
     VeiculoPesquisaComponent,
     UsuarioCadastroComponent,
+    AcessoriosCadastroComponent,
+    AcessoriosPesquisaComponent,
   ],
   imports: [
     BrowserModule,
