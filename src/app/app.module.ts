@@ -19,6 +19,7 @@ import { VeiculoPesquisaComponent } from './pages/veiculo/veiculo-pesquisa/veicu
 import { UsuarioCadastroComponent } from './pages/usuario/usuario-cadastro/usuario-cadastro.component';
 import { AcessoriosCadastroComponent } from './pages/acessorios/acessorios-cadastro/acessorios-cadastro.component';
 import { AcessoriosPesquisaComponent } from './pages/acessorios/acessorios-pesquisa/acessorios-pesquisa.component';
+import { MenuPrincipalComponent } from './pages/menu/menu-principal/menu-principal.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AcessoriosPesquisaComponent } from './pages/acessorios/acessorios-pesqu
     UsuarioCadastroComponent,
     AcessoriosCadastroComponent,
     AcessoriosPesquisaComponent,
+    MenuPrincipalComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,25 +1,30 @@
 <div>
-    <mat-toolbar color="primary">
-      <span>Trabalho</span>
-      <button mat-button [matMenuTriggerFor]="menuVeiculo">Veiculo</button>
-      <mat-menu #menuVeiculo="matMenu">
-        <button mat-menu-item routerLink="veiculo/cadastro">Cadastro</button>
-        <button mat-menu-item routerLink="veiculo/pesquisa">Pesquisa</button>
-      </mat-menu>
+  <mat-toolbar>
+    <span>Trabalho</span>
+    <button mat-button [matMenuTriggerFor]="menuPrincipal">Menu</button>
+    <mat-menu #menuPrincipal="matMenu">
+      <button mat-menu-item routerLink="menu/menu-principal">Menu</button>
+    </mat-menu>
 
-      <button mat-button [matMenuTriggerFor]="menuAcessorio">Acessorios</button>
-      <mat-menu #menuAcessorio="matMenu">
-        <button mat-menu-item routerLink="acessorios/cadastro">Cadastro</button>
-        <button mat-menu-item routerLink="acessorios/pesquisa">Pesquisa</button>
-      </mat-menu>
+    <button mat-button [matMenuTriggerFor]="menuVeiculo">Veiculo</button>
+    <mat-menu #menuVeiculo="matMenu">
+      <button mat-menu-item routerLink="veiculo/cadastro">Cadastro</button>
+      <button mat-menu-item routerLink="veiculo/pesquisa">Pesquisa</button>
+    </mat-menu>
 
-     <!-- <button mat-button [matMenuTriggerFor]="menuCategoria">Categoria</button>
+    <button mat-button [matMenuTriggerFor]="menuAcessorio">Acessorios</button>
+    <mat-menu #menuAcessorio="matMenu">
+      <button mat-menu-item routerLink="acessorios/cadastro">Cadastro</button>
+      <button mat-menu-item routerLink="acessorios/pesquisa">Pesquisa</button>
+    </mat-menu>
+
+    <!-- <button mat-button [matMenuTriggerFor]="menuCategoria">Categoria</button>
       <mat-menu #menuCategoria="matMenu">
         <button mat-menu-item >Cadastro</button>
         <button mat-menu-item>Pesquisa</button>
       </mat-menu> -->
-    </mat-toolbar>
-    <div class="container">
-        <router-outlet></router-outlet>
-    </div>
+  </mat-toolbar>
+  <div class="container">
+    <router-outlet></router-outlet>
   </div>
+</div>
