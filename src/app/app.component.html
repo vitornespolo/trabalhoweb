@@ -1,11 +1,7 @@
 <div>
   <mat-toolbar>
     <span>Trabalho</span>
-    <button mat-button [matMenuTriggerFor]="menuPrincipal">Menu</button>
-    <mat-menu #menuPrincipal="matMenu">
-      <button mat-menu-item routerLink="menu/menu-principal">Menu</button>
-    </mat-menu>
-
+    
     <button mat-button [matMenuTriggerFor]="menuVeiculo">Veiculo</button>
     <mat-menu #menuVeiculo="matMenu">
       <button mat-menu-item routerLink="veiculo/cadastro">Cadastro</button>

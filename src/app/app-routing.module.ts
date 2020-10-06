@@ -1,3 +1,4 @@
+import { UsuarioCadastroComponent } from './pages/usuario/usuario-cadastro/usuario-cadastro.component';
 import { AcessoriosPesquisaComponent } from './pages/acessorios/acessorios-pesquisa/acessorios-pesquisa.component';
 import { AcessoriosCadastroComponent } from './pages/acessorios/acessorios-cadastro/acessorios-cadastro.component';
 import { VeiculoPesquisaComponent } from './pages/veiculo/veiculo-pesquisa/veiculo-pesquisa.component';
@@ -5,12 +6,18 @@ import { VeiculoCadastroComponent } from './pages/veiculo/veiculo-cadastro/veicu
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'veiculo/cadastro',
+    redirectTo:'usuario/cadastro',
     pathMatch:'full'
   },
+  {
+    path:'usuario/cadastro',
+    component:UsuarioCadastroComponent
+  },
+
   {
     path:'veiculo/cadastro',
     component:VeiculoCadastroComponent
@@ -18,11 +25,6 @@ const routes: Routes = [
   {
     path:'veiculo/pesquisa',
     component:VeiculoPesquisaComponent
-  },
-  {
-    path:'',
-    redirectTo:'acessorios/cadastro',
-    pathMatch:'full'
   },
   {
     path:'acessorios/cadastro',
