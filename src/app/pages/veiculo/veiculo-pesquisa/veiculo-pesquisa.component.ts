@@ -35,4 +35,9 @@ export class VeiculoPesquisaComponent implements OnInit {
     console.log('Alterando o veiculo', veiculo);
     this.router.navigate(['/veiculo/cadastro', veiculo]);
   }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }

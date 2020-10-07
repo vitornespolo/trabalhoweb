@@ -2,6 +2,8 @@ import { Usuario } from './../../../models/usuario';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../auth.service';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-usuario-cadastro',
@@ -11,36 +13,19 @@ import { ActivatedRoute } from '@angular/router';
 export class UsuarioCadastroComponent implements OnInit {
 
   public usuario:Usuario = new Usuario();
+  public usuarios:Usuario[] = [];
+  public dataSource:MatTableDataSource<Usuario> = new MatTableDataSource(this.usuarios);
   public form:FormGroup = new FormGroup({
     login: new FormControl(),
     senha:new FormControl() 
   })
-  constructor(private router:ActivatedRoute) { }
+  constructor(private router:ActivatedRoute,
+    private authService:AuthService) { }
 
-  ngOnInit(): void {
-    this.router.params.subscribe((params)=>{
-      console.log(params);
-      this.usuario = params as Usuario;
-      this.form.patchValue(this.usuario);
-    })
-  }
+    ngOnInit(): void { 
+    }
 
   public logar(){
-    if (this.form.invalid){
-      alert('Campos invalidos!');
-      return;
+    this.authService.fazerLogin(this.usuario);
     }
-    this.usuario = this.form.value;
-    console.log('Usuario', this.usuario);
-    let jsonUsers = localStorage.getItem('usuarios');
-    let usuarios:Usuario[] = []
-    if (jsonUsers != null){
-      usuarios = JSON.parse(jsonUsers);
-    }
-    usuarios.push(this.usuario); 
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
-    console.table(usuarios);
-    alert('Salvo com sucesso')
-    this.form.reset();
-  }
 }

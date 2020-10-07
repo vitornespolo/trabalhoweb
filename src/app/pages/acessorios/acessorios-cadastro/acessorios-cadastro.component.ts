@@ -35,13 +35,13 @@ export class AcessoriosCadastroComponent implements OnInit {
     }
     this.acessorio = this.form.value;
     console.log('Acessorio', this.acessorio);
-    let jsonUsers = localStorage.getItem('usuarios');
+    let jsonUsers = localStorage.getItem('acessorios');
     let acessorios:Acessorio[] = []
     if (jsonUsers != null){
       acessorios = JSON.parse(jsonUsers);
     }
     acessorios.push(this.acessorio); 
-    localStorage.setItem('usuarios', JSON.stringify(acessorios));
+    localStorage.setItem('acessorios', JSON.stringify(acessorios));
     console.table(acessorios);
     alert('Salvo com sucesso')
     this.form.reset();

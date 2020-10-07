@@ -34,4 +34,9 @@ export class AcessoriosPesquisaComponent implements OnInit {
     console.log('Alterando acessorio', acessorio);
     this.router.navigate(['/acessorios/cadastro', acessorio]);
   }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }

@@ -34,7 +34,7 @@ export class VeiculoCadastroComponent implements OnInit {
     }
     this.veiculo = this.form.value;
     console.log('Veiculo', this.veiculo);
-    let jsonUsers = localStorage.getItem('veiculoss');
+    let jsonUsers = localStorage.getItem('veiculos');
     let veiculos:Veiculo[] = []
     if (jsonUsers != null){
       veiculos = JSON.parse(jsonUsers);

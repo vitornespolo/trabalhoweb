@@ -1,7 +1,7 @@
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {AuthService} from './pages/usuario/auth.service'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +20,11 @@ import { UsuarioCadastroComponent } from './pages/usuario/usuario-cadastro/usuar
 import { AcessoriosCadastroComponent } from './pages/acessorios/acessorios-cadastro/acessorios-cadastro.component';
 import { AcessoriosPesquisaComponent } from './pages/acessorios/acessorios-pesquisa/acessorios-pesquisa.component';
 import { MenuPrincipalComponent } from './pages/menu/menu-principal/menu-principal.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +35,7 @@ import { MenuPrincipalComponent } from './pages/menu/menu-principal/menu-princip
     AcessoriosCadastroComponent,
     AcessoriosPesquisaComponent,
     MenuPrincipalComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -45,9 +51,13 @@ import { MenuPrincipalComponent } from './pages/menu/menu-principal/menu-princip
     FlexLayoutModule,
     MatTableModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
