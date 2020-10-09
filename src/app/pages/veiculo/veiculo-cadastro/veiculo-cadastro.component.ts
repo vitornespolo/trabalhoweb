@@ -11,6 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 export class VeiculoCadastroComponent implements OnInit {
 
   public veiculo:Veiculo = new Veiculo();
+  public veiculos:Veiculo[] = [];
+  public index: number = -1;
   public form:FormGroup = new FormGroup({
     modelo:new FormControl(''),
     cor: new FormControl(),
@@ -24,7 +26,13 @@ export class VeiculoCadastroComponent implements OnInit {
       console.log(params);
       this.veiculo = params as Veiculo;
       this.form.patchValue(this.veiculo);
+      let jsonUsers = localStorage.getItem('veiculos');
+    if (jsonUsers != null){
+      this.veiculos = JSON.parse(jsonUsers);
+    }
+    this.index = this.veiculos.indexOf(this.veiculo);
     })
+    
   }
 
   public salvar(){
@@ -34,16 +42,17 @@ export class VeiculoCadastroComponent implements OnInit {
     }
     this.veiculo = this.form.value;
     console.log('Veiculo', this.veiculo);
-    let jsonUsers = localStorage.getItem('veiculos');
-    let veiculos:Veiculo[] = []
-    if (jsonUsers != null){
-      veiculos = JSON.parse(jsonUsers);
+    
+    if(this.index >= 0) {
+      this.veiculos.splice(this.index, 1, this.veiculo);
+    }else {
+      this.veiculos.push(this.veiculo); 
     }
-    veiculos.push(this.veiculo); 
-    localStorage.setItem('veiculos', JSON.stringify(veiculos));
-    console.table(veiculos);
+    localStorage.setItem('veiculos', JSON.stringify(this.veiculos));
+    console.table(this.veiculos);
     alert('Salvo com sucesso')
     this.form.reset();
+    
   }
 
 
